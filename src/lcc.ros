@@ -12,6 +12,48 @@ exec ros -Q -- $0 "$@"
   (:use :cl))
 (in-package :ros.script.lcc.3744156069)
 
+(defvar idx 1)
+
+(defun emit-header ()
+  (format t "define i32 @main() {
+  %data = alloca i8*, align 8
+  %ptr = alloca i8*, align 8
+  %data_ptr = call i8* @calloc(i64 30000, i64 1)
+  store i8* %data_ptr, i8** %data, align 8
+  store i8* %data_ptr, i8** %ptr, align 8~%"))
+
+(defun emit-footer ()
+  (format t "  %~D = load i8*, i8** %data, align 8~%" idx)
+  (format t "  call void @free(i8* %~D)~%" idx)
+  (format t "  ret i32 0
+}
+
+declare i8* @calloc(i64, i64)
+declare void @free(i8*)
+declare i32 @putchar(i32)~%"))
+
+(defun argv-check (argv)
+  (assert (>= (length argv) 1)
+          (argv)
+          "Common Lisp C compiler.
+
+Usage:
+  lcc.ros test.c")
+
+  (let ((file (pop argv)))
+    (assert (probe-file file)
+          (argv)
+          (format nil "~S is not found" file))
+    file))
+
 (defun main (&rest argv)
-  (declare (ignorable argv)))
+  (let ((file (argv-check argv)))
+    (emit-header)
+    (with-open-file (stream file)
+                    (let (char)
+                      (loop :while (setq char (read-char stream nil))
+                            :do
+                            nil)))
+    (emit-footer)))
+
 ;;; vim: set ft=lisp lisp:
