@@ -1,0 +1,24 @@
+* LCC
+LCC is Lisp C Compiler.
+
+return llvm code (.ll)
+** Usage
+#+begin_src shell
+  lcc hello.c | lli
+#+end_src
+** Installation
+#+begin_src shell
+  cd ~/.roswell/local-projects
+  git clone https://github.com/conao/lisp-c-compiler lbc
+#+end_src
+** Author
+
++ Naoya Yamashita
+
+** Copyright
+
+Copyright (c) 2018 Naoya Yamashita
+
+** License
+
+Licensed under the MIT License.
