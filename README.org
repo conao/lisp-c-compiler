@@ -1,24 +1,69 @@
-* LCC
-LCC is Lisp C Compiler.
+#+author: conao3
+#+date: <2018-10-25 Thu>
+
+[[https://github.com/conao3/clcc.lisp][https://raw.githubusercontent.com/conao3/files/master/header/png/clcc.lisp.png]]
+[[https://github.com/conao3/clcc.lisp/blob/master/LICENSE][https://img.shields.io/github/license/conao3/clcc.lisp.svg?style=flat-square]]
+[[https://github.com/conao3/clcc.lisp/releases][https://img.shields.io/github/tag/conao3/clcc.lisp.svg?style=flat-square]]
+[[https://travis-ci.org/conao3/clcc.lisp][https://img.shields.io/travis/conao3/clcc.lisp/master.svg?style=flat-square]]
+[[https://app.codacy.com/project/conao3/clcc.lisp/dashboard][https://img.shields.io/codacy/grade/6fc7f4b3197c440db43c4698aaa3715e.svg?logo=codacy&style=flat-square]]
+[[https://www.patreon.com/conao3][https://img.shields.io/badge/patreon-@conao3-orange.svg?logo=patreon&style=flat-square]]
+[[https://twitter.com/conao_3][https://img.shields.io/badge/twitter-@conao__3-blue.svg?logo=twitter&style=flat-square]]
+[[https://join.slack.com/t/conao3-support/shared_invite/enQtNTg2MTY0MjkzOTU0LTFjOTdhOTFiNTM2NmY5YTE5MTNlYzNiOTE2MTZlZWZkNDEzZmRhN2E0NjkwMWViZTZiYjA4MDUxYTUzNDZiNjY][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
+
+* Table of Contents
+- [[#background][Background]]
+- [[#install][Install]]
+- [[#usage][Usage]]
+- [[#information][Information]]
+  - [[#donation][Donation]]
+  - [[#community][Community]]
+  - [[#contribute][Contribute]]
+  - [[#license][License]]
+  - [[#author][Author]]
+  - [[#contributor][Contributor]]
+
+* Background
+~CLCC~ is Conao3 Lisp C Compiler.
 
 return llvm code (.ll)
-** Usage
+
+* Install
+#+begin_src shell
+  cd ~/.roswell/local-projects
+  git clone https://github.com/conao/clcc.lisp lcc
+#+end_src
+
+* Usage
 #+begin_src shell
   lcc hello.c | lli
 #+end_src
-** Installation
-#+begin_src shell
-  cd ~/.roswell/local-projects
-  git clone https://github.com/conao/lisp-c-compiler lbc
-#+end_src
-** Author
 
-+ Naoya Yamashita
+* Information
+** Donation
+I love OSS and I am dreaming of working on it as *full-time* job.
 
-** Copyright
+*With your support*, I will be able to spend more time at OSS!
 
-Copyright (c) 2018 Naoya Yamashita
+[[https://www.patreon.com/conao3][https://c5.patreon.com/external/logo/become_a_patron_button.png]]
+
+** Community
+All feedback and suggestions are welcome!
+
+You can use github issues, but you can also use [[https://join.slack.com/t/conao3-support/shared_invite/enQtNTg2MTY0MjkzOTU0LTFjOTdhOTFiNTM2NmY5YTE5MTNlYzNiOTE2MTZlZWZkNDEzZmRhN2E0NjkwMWViZTZiYjA4MDUxYTUzNDZiNjY][Slack]]
+if you want a more casual conversation.
+
+** Contribution
+Feel free to send PR!
 
 ** License
+#+begin_example
+  Affero General Public License Version 3 (AGPLv3)
+  Copyright (c) Naoya Yamashita - https://conao3.com
+  https://github.com/conao3/clcc.lisp/blob/master/LICENSE
+#+end_example
 
-Licensed under the MIT License.
+** Author
+- Naoya Yamashita ([[https://github.com/conao3][conao3]])
+
+** Contributor
+- Not yet... Now send PR and add your name!!
